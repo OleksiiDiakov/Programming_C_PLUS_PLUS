@@ -1,4 +1,4 @@
-LB 10
+
 
 Завдання 1
 #include <iostream>
@@ -213,6 +213,7 @@ int main() {
 
     return 0;
 }
+
 
 
 
