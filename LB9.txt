@@ -1,0 +1,157 @@
+Завдання 1
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    const int m = 8;
+    int a[m];
+
+    srand(time(0));
+
+    for (int i = 0; i < m; i++) {
+        a[i] = rand() % 30 + 1;
+    }
+
+    cout << "Original array: ";
+    for (int i = 0; i < m; i++) cout << a[i] << " ";
+    cout << endl;
+
+    int maxIndex = 0, minIndex = 0;
+    for (int i = 1; i < m; i++) {
+        if (a[i] > a[maxIndex]) maxIndex = i;
+        if (a[i] < a[minIndex]) minIndex = i;
+    }
+
+    int nolongtimehere = a[maxIndex];
+    a[maxIndex] = a[minIndex];
+    a[minIndex] = nolongtimehere;
+
+    cout << "Array after swapping min and max: ";
+    for (int i = 0; i < m; i++) cout << a[i] << " ";
+    cout << endl;
+
+    return 0;
+}
+	
+
+Завдання 2
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    const int m = 12;
+    int a[m];
+
+    srand(time(0));
+
+    for (int i = 0; i < m; i++) {
+        a[i] = rand() % 30 + 1;
+    }
+
+    cout << "Generated array: ";
+    for (int i = 0; i < m; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    int A;
+    cout << "Enter a number A: ";
+    cin >> A;
+
+    int count = 0;
+    for (int i = 0; i < m; i++) {
+        if (a[i] > A) {
+            count++;
+        }
+    }
+
+    cout << "Number of elements greater than " << A << ": " << count << endl;
+
+    return 0;
+}
+
+Завдання 3
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    const int m = 12;
+    int a[m];
+
+    srand(time(0));
+
+    for (int i = 0; i < m; i++) {
+        a[i] = rand() % 10 + 1;
+    }
+
+    cout << "Generated array: ";
+    for (int i = 0; i < m; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    int max1 = 0;
+    int max2 = 0;
+
+    for (int i = 0; i < m; i++) {
+        if (a[i] > max1) {
+            max2 = max1;
+            max1 = a[i];
+        } else if (a[i] > max2 && a[i] < max1) {
+            max2 = a[i];
+        }
+    }
+
+    cout << "Second largest element is: " << max2 << endl;
+
+    return 0;
+}
+
+Завдання 4
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    const int m = 10;
+    int a[m];
+
+    srand(time(0));
+
+
+    for (int i = 0; i < m; i++) {
+        a[i] = rand() % 10;
+    }
+
+    cout << "Generated array: ";
+    for (int i = 0; i < m; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    int index = -1;
+    for (int i = 0; i < m; i++) {
+        if (a[i] == 0) {
+            index = i;
+        }
+    }
+
+    if (index != -1) {
+        cout << "Index of first zero element: " << index << endl;
+    } else {
+        cout << "Array does not contain zero elements." << endl;
+    }
+
+    return 0;
+}
