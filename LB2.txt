@@ -1,0 +1,51 @@
+Завдання 1
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+double Y(double x, double a, double b) {
+    if (x <= 0) {
+        return pow(x, 3) + a / b;
+    } else if (x == 0) {
+        return sin(a / b) + 4.0 * b * x;
+    } else if (x>0) {
+        return sqrt(x) + a / b;
+    }
+}
+int main() {
+    double x, a, b;
+    cout << "Enter x, a, b: ";
+    if ((cin >> x >> a >> b)) {
+        return 1;
+    }
+    if (b == 0) {
+        cout << "Error: zero!" << endl;
+        return 1;
+    }
+   cout << "Y = " << Y(x, a, b) << endl;
+    return 0;
+}
+
+
+
+Завдання 2
+
+#include <iostream>
+using namespace std;
+
+int main() {
+   double x, y;
+    cout << "Enter X: ";
+    cin >> x;
+    cout << "Enter Y: ";
+    cin >> y;
+    bool SqUp = (x>=-1 && x<=1 && y<=1 && y>=0);
+    bool SqDown = (x>=0 && x<=1 && y<=0 && y>=-1);
+
+    if (SqUp||SqDown)
+        cout << " The point belongs to the given coordinates";
+        else
+            cout << " The point not belongs to the given coordinates";
+
+    return 0;
+}
