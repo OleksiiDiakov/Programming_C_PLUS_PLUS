@@ -1,0 +1,104 @@
+Завдання 1
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int value;
+    bool answer;
+
+    cout << "Enter a value: ";
+    cin >> value;
+
+    answer = ((value>=0 && value<10) ||
+              (value*2<20 && value-2>-2) ||
+              (value-1>1 && value/2<10) ||
+              (value == 111));
+
+    cout << (answer ? "THAT'S TRUE :)" : "THAT'S NOT TRUE :(") << endl;
+
+    return 0;
+}
+
+Завдання 2
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    double a = 2.3;
+    double b = 2.3;
+    double c = 2.123456;
+    double d = 2.123456;
+    double e = 2.123456;
+
+    cout << a << endl;
+
+    cout << b << endl;
+    
+    cout << setprecision(6) << c << endl;
+
+    cout << fixed << setprecision(2) << d << endl;
+
+    cout << fixed << setprecision(0) << e << endl;
+
+    return 0;
+}
+
+
+Завдання 3
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    int x, y;
+    cout << "Enter two integers: ";
+    cin >> x >> y;
+
+    float a = 1.0 / x;
+    float b = 1.0 / y;
+
+    float epsilon = 0.000001;
+
+    if (fabs(a - b) < epsilon)
+        cout << "Results are equal" << endl;
+    else
+        cout << "Results are not equal " << endl;
+
+    return 0;
+}
+
+Завдання 4
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int n1, n2, n3, n4;
+
+    cout << "Enter four parts of the IP address:\n";
+
+    if (cin >> n1 >> n2 >> n3 >> n4) {
+
+        if ((n1 >= 1 && n1 <= 255) &&
+            (n2 >= 1 && n2 <= 255) &&
+            (n3 >= 1 && n3 <= 255) &&
+            (n4 >= 1 && n4 <= 255))
+        {
+
+            cout << n1 << "."  << n2 << "." << n3 << "." << n4 << endl;
+        }
+        else {
+            cout << "One or more numbers are outside the required range 1 to 255." << endl;
+        }
+    }
+
+    return 0;
+}
