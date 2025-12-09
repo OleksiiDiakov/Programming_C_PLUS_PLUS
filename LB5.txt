@@ -1,0 +1,93 @@
+Завдання 1
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    cout << "y = sin^5(x) + |5x - 1.5|" << endl;
+    double x;
+
+    for (int i = 0; i < 5; i++) {
+        cout << "Enter x" << ": ";
+        cin >> x;
+
+        double y = pow(sin(x), 5) + fabs(5 * x - 1.5);
+        cout << "y" << " = " << y << endl;
+    }
+    
+}
+
+Завдання 2
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    long long prod = 1;
+    int max = 40;
+
+    for (int num = 4; num < max; num += 4) {
+        prod *= num;
+    }
+    cout << "Result: " << prod << endl;
+
+    return 0;
+}
+
+Завдання 3
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double a, b, h;
+
+    cout << "ENTER a: ";
+    cin >> a;
+
+    cout << "ENTER b (must be > a): ";
+    cin >> b;
+
+    cout << "ENTER h: ";
+    cin >> h;
+
+    if (b <= a) {
+        cout << "Error: b must be strictly greater than a.\n";
+        return 0;
+    }
+    if (h <= 0) {
+        cout << "Error: h must be positive.\n";
+        return 0;
+    }
+
+    double distance = b - a;
+
+    cout << "-----------------------------\n";
+    cout << "|        X       |      Y     |\n";
+    cout << "-----------------------------\n";
+
+    int steps = static_cast<int>( round(distance / h) );
+    double x = a;
+    for (int i = 1; i <= steps; i++) {
+
+        double under = sin(x) + x * x;
+
+        if (under < 0) {
+            cout << "ODZ ERROR: sin(x) + x^2 < 0 at x = " << x << "\n";
+            cout << "Tabulation stopped.\n";
+        }
+
+        double y = sqrt(under);
+
+        cout << "| " << setw(12) << x
+             << " | " << setw(10) << y << " |\n";
+        x += steps;
+    }
+
+    cout << "-----------------------------\n";
+
+    return 0;
+}
