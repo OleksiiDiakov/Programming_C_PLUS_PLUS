@@ -12,16 +12,9 @@ int main() {
     cout << "Enter b: ";
     cin >> b;
 
-    // чисельник
     double numerator = 11.21 * (1 + log(b / a));
-
-    // знаменник
     double denominator = 1 - sin((a / b) * M_PI) * cos((a / b) * M_PI);
-
-    // обчислення дробу
     double fraction = numerator / denominator;
-
-    // піднесення до степеня (2/3)
     double result = pow(fraction, 2.0 / 3.0);
 
     cout << "Result = " << result << endl;
@@ -42,15 +35,14 @@ int main() {
     cout << "Enter b: ";
     cin >> b;
 
-    // вираз усередині дужок
-    double inside = 0.5 * sin(log(exp(b + a)) * M_PI / 8.0) 
+     double inside = 0.5 * sin(log(exp(b + a)) * M_PI / 8.0) 
                   + 1.308 * cos(log(exp(a - b)) * M_PI / 8.0);
 
-    // піднесення до степеня (2/3)
     double result = pow(inside, 2.0 / 3.0);
 
     cout << "Result = " << result << endl;
 
     return 0;
 }
+
 
